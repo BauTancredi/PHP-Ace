@@ -1,0 +1,78 @@
+.btn.btn-primary {
+  background: #b571dd;
+  border-color: #b571dd;
+  box-shadow: rgba(181, 113, 221, 0.25) 0px 10px 20px -12px;
+}
+
+.btn.btn-primary:hover {
+  box-shadow: rgba(138, 91, 165, 0.25) 0px 20px 40px -12px;
+}
+
+.btn.btn-primary:not(.disabled):active {
+  background-color: #945bb5;
+  border-color: #945bb5;
+  transform: translateY(10px);
+}
+
+.btn {
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.2) 0s;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.badge.badge-primary {
+  background-color: #17c99a;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body.signup {
+  background-image: linear-gradient(0, #17c99a, #17a5c9);
+  height: 100vh;
+}
+
+#header nav .navbar-brand {
+  font-family: 'Faster One', cursive;
+}
+
+.auth-form {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px;;
+}
+
+.auth-form input {
+  background-color: #f5f4f9;
+  border-radius: 8px;
+  border: 0;
+}
+
+.auth-form input:hover,
+.auth-form input:active,
+.auth-form input:focus {
+  background-color: #f5f4f9;
+  outline: 0;
+}
+
+.auth-form .input-group-text {
+  background-color: #f5f4f9;
+  border: 0;
+}
+
+.auth-form .auth-nav a {
+  color: black;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.auth-form .auth-nav a.active {
+  border-bottom: 1px solid #17c99a;
+  color: #17c99a;
+}
+
+.auth-form .auth-nav a:hover {
+  text-decoration: none;
+}
