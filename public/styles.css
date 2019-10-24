@@ -29,6 +29,7 @@
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
+  color: #404040;
 }
 
 body.signup {
@@ -36,8 +37,15 @@ body.signup {
   height: 100vh;
 }
 
-#header nav .navbar-brand {
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.brand {
   font-family: 'Faster One', cursive;
+  color: red;
 }
 
 .auth-form {
@@ -45,7 +53,7 @@ body.signup {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px;;
 }
 
-.auth-form input {
+.auth-form input:not(.is-invalid) {
   background-color: #f5f4f9;
   border-radius: 8px;
   border: 0;
@@ -64,7 +72,7 @@ body.signup {
 }
 
 .auth-form .auth-nav a {
-  color: black;
+  color: #404040;
   border-bottom: 1px solid #e4e4e4;
 }
 
