@@ -1,12 +1,3 @@
-<?php
-include_once("signup_form.php");
-
-$errores = [];
-$signupForm = new SignupForm();
-if ($_POST) {
-  $errores = $signupForm->enviar();
-}
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,7 +19,7 @@ if ($_POST) {
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 mt-4 pt-4">
-            <h1 class="text-white text-center brand">Ace</h1>
+            <h1 class="text-white text-center brand"><a class="main-title" href="index.php">Ace</a></h1>
             <form class="bg-white p-4 auth-form p-relative action="signup.php" method="post" enctype="multipart/form-data">
               <div class="p-absolute d-flex justify-content-between auth-nav">
                 <a class="flex-fill text-center pb-2" href="signin.php">Iniciar sesión</a>
@@ -39,12 +30,7 @@ if ($_POST) {
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-address-card"></i></span>
                   </div>
-                  <input name="fullname" type="text" class="form-control <?= isset($errores["fullname"]) ? "is-invalid" : "" ?>" placeholder="Nombre completo" value="<?= $signupForm->getFullname() ?>">
-                  <?php if(isset($errores["fullname"])): ?>
-                    <div class="invalid-feedback">
-                      <?= $errores["fullname"] ?>
-                    </div>
-                  <?php endif; ?>
+                  <input name="fullname" type="text" class="form-control" placeholder="Nombre completo">
                 </div>
               </div>
               <div class="form-group">
@@ -52,12 +38,7 @@ if ($_POST) {
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                   </div>
-                  <input name="email" type="email" class="form-control <?= isset($errores["email"]) ? "is-invalid" : "" ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico" value="<?= $signupForm->getEmail() ?>">
-                  <?php if(isset($errores["email"])): ?>
-                    <div class="invalid-feedback">
-                      <?= $errores["email"] ?>
-                    </div>
-                  <?php endif; ?>
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico">
                 </div>
               </div>
               <div class="form-group">
@@ -65,12 +46,7 @@ if ($_POST) {
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                   </div>
-                  <input name="password" type="password" class="form-control <?= isset($errores["password"]) ? "is-invalid" : "" ?>" placeholder="Contraseña">
-                  <?php if(isset($errores["password"])): ?>
-                    <div class="invalid-feedback">
-                      <?= $errores["password"] ?>
-                    </div>
-                  <?php endif; ?>
+                  <input name="password" type="password" class="form-control" placeholder="Contraseña">
                 </div>
               </div>
               <div class="form-group">
@@ -79,18 +55,9 @@ if ($_POST) {
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-camera"></i></span>
                   </div>
-                  <input name="avatar" type="file" id="profilePicture" class="form-control <?= isset($errores["avatar"]) ? "is-invalid" : "" ?>">
-                  <?php if(isset($errores["avatar"])): ?>
-                    <div class="invalid-feedback">
-                      <?= $errores["avatar"] ?>
-                    </div>
-                  <?php endif; ?>
+                  <input name="avatar" type="file" id="profilePicture" class="form-control">
                 </div>
               </div>
-              <!-- <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Recordar sesión</label>
-              </div> -->
               <button name="submit" type="submit" class="btn btn-primary btn-block">Crear usuario</button>
             </form>
           </div>

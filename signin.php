@@ -19,7 +19,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-4 offset-md-2 offset-lg-4 mt-4 pt-4">
-            <h1 class="text-white text-center brand">Ace</h1>
+          <h1 class="text-white text-center brand"><a class="main-title" href="index.php">Ace</a></h1>
             <form class="bg-white p-4 auth-form p-relative" method="post" action="signin.php">
               <div class="p-absolute d-flex justify-content-between auth-nav">
                 <a class="flex-fill text-center pb-2 active" href="signin.php">Iniciar sesión</a>
@@ -41,10 +41,6 @@
                   <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
                 </div>
               </div>
-              <!-- <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Recordar sesión</label>
-              </div> -->
               <button type="submit" name="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
               <div class="form-group form-check text-center pl-0 mt-4 mb-0">
                 <a class="text-dark" href="#"><small>¿Olvidaste tu contraseña?</small></a>

@@ -27,6 +27,12 @@
   background-color: #17c99a;
 }
 
+.main-title,
+.main-title:hover {
+  color: white;
+  text-decoration: none;
+}
+
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: #404040;
