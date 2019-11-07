@@ -15,7 +15,7 @@ class SingUpForm extends Form {
   }
 
   public function procesarFormulario() {
-    var_dump('SignUp procesado');exit;
+     var_dump('SignUp procesado');exit;
   }
 
   public function validar(){

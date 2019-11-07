@@ -1,17 +1,26 @@
+<?php
+include_once("SingInForm.php");
+ 
+$errores = [];
+$signInForm = new SingInForm();
+if ($_POST) {
+  $errores = $signInForm->enviar();
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+ 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Faster+One|IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
-
+ 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="public/styles.css">
-
+ 
     <title>Iniciá sesión en tu cuenta de Ace - Ace</title>
   </head>
   <body class="signup">
@@ -30,7 +39,12 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                 </div>
-                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico">
+                <input name="email" value="<?= $signInForm->getEmail() ?>" type="email" class="form-control <?= isset($errores["email"]) ? "is-invalid" : "" ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electrónico">
+                <?php if(isset($errores["email"])): ?>
+                  <div class="invalid-feedback">
+                    <?= $errores["email"] ?>
+                  </div>
+                <?php endif; ?>
               </div>
               </div>
               <div class="form-group">
@@ -38,7 +52,12 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                   </div>
-                  <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                  <input name="password" type="password" class="form-control <?= isset($errores["password"]) ? "is-invalid" : "" ?>" id="exampleInputPassword1" placeholder="Contraseña">
+                  <?php if(isset($errores["password"])): ?>
+                    <div class="invalid-feedback">
+                      <?= $errores["password"] ?>
+                    </div>
+                  <?php endif; ?>
                 </div>
               </div>
               <button type="submit" name="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
@@ -50,10 +69,10 @@
         </div>
       </div>
     </main>
-
+ 
     <!-- FontAwesome Icons -->
     <script src="https://kit.fontawesome.com/d3d10edd35.js" crossorigin="anonymous"></script>
-
+ 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -61,3 +80,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+ 
