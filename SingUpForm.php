@@ -1,5 +1,8 @@
 <?php 
 include_once("Form.php");
+include_once("Security.php");
+include_once("Files.php");
+include_once("User.php");
 
 class SingUpForm extends Form {
   protected $fullname;
@@ -15,7 +18,10 @@ class SingUpForm extends Form {
   }
 
   public function procesarFormulario() {
-     var_dump('SignUp procesado');exit;
+    $filePath = Files::upload($_FILES["avatar"]);
+    $hashedPassword = Security::hashPassword($this->password);
+    $user = new User($this->fullname, $this->email, $hashedPassword, $filePath);
+    User::save($user);
   }
 
   public function validar(){
